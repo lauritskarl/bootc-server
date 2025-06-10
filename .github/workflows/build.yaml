@@ -1,4 +1,4 @@
-name: Build and push personal server image
+name: Build and push image
 
 on:
   schedule:
