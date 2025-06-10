@@ -59,6 +59,6 @@ jobs:
       - name: Sign image
         id: sign
         run: |
-          cosign sign ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}@${{ steps.push.outputs.digest }}
+          cosign sign --yes ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}@${{ steps.push.outputs.digest }}
         env:
           COSIGN_EXPERIMENTAL: 1
