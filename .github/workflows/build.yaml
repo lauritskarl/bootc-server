@@ -3,6 +3,7 @@ name: Build and push personal server image
 on:
   schedule:
     - cron: '0 0 * * 5'
+  workflow_dispatch:
   push:
     branches: [ "main" ]
 
