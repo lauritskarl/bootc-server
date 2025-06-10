@@ -6,6 +6,7 @@ RUN dnf install -y \
   @server-product \
   @cloud-server \
   @guest-agents \
+  @container-management \
   firewalld \
   tailscale && \
   dnf clean all
