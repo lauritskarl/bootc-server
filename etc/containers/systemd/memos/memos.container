@@ -1,0 +1,16 @@
+[Unit]
+Description=Memos Container
+
+[Container]
+Pod=memos.pod
+ContainerName=memos
+Image=docker.io/neosmemo/memos:stable
+AutoUpdate=registry
+Volume=memos.volume:/var/opt/memos
+
+[Service]
+Restart=always
+TimeoutStartSec=90
+
+[Install]
+WantedBy=multi-user.target default.target

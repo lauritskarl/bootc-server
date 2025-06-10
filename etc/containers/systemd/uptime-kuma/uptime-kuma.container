@@ -1,0 +1,17 @@
+[Unit]
+Description=Uptime Kuma Container
+
+[Container]
+Pod=uptime-kuma.pod
+ContainerName=uptime-kuma
+Image=docker.io/louislam/uptime-kuma:latest
+AutoUpdate=registry
+Volume=uptime-kuma.volume:/app/data
+Volume=/run/podman/podman.sock:/var/run/docker.sock
+
+[Service]
+Restart=always
+TimeoutStartSec=90
+
+[Install]
+WantedBy=multi-user.target default.target

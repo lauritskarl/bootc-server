@@ -1,0 +1,20 @@
+[Unit]
+Description=Beszel Agent Container
+
+[Container]
+Pod=beszel.pod
+ContainerName=beszel-agent
+Image=docker.io/henrygd/beszel-agent:latest
+AutoUpdate=registry
+Network=host
+Volume=beszel_socket.volume:/beszel_socket:Z
+Volume=/run/podman/podman.sock:/var/run/docker.sock
+Environment=LISTEN=/beszel_socket/beszel.sock
+Environment=KEY='ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII9UWrE7mLxj+0I4uPjltfzTpWq/LEUcCdth7eNadfYg'
+
+[Service]
+Restart=always
+TimeoutStartSec=90
+
+[Install]
+WantedBy=multi-user.target default.target

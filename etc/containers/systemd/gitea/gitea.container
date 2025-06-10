@@ -1,0 +1,18 @@
+[Unit]
+Description=Gitea Container
+
+[Container]
+Pod=gitea.pod
+ContainerName=gitea
+Image=docker.io/gitea/gitea:latest
+AutoUpdate=registry
+Volume=gitea.volume:/data
+Volume=/etc/timezone:/etc/timezone:ro
+Volume=/etc/localtime:/etc/localtime:ro
+
+[Service]
+Restart=always
+TimeoutStartSec=90
+
+[Install]
+WantedBy=multi-user.target default.target

@@ -1,0 +1,5 @@
+[Unit]
+Description=Roundcube Database Volume
+
+[Volume]
+VolumeName=roundcube_db

@@ -1,0 +1,5 @@
+[Unit]
+Description=Roundcube Temporary Storage Volume
+
+[Volume]
+VolumeName=roundcube_temp

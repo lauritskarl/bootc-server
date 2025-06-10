@@ -1,0 +1,6 @@
+[Unit]
+Description=SearXNG Pod
+
+[Pod]
+PodName=searxng
+PublishPort=37673:8080

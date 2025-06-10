@@ -1,0 +1,6 @@
+[Unit]
+Description=Vikunja Pod
+
+[Pod]
+PodName=vikunja
+PublishPort=22003:3456

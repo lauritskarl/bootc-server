@@ -1,0 +1,6 @@
+[Unit]
+Description=Beszel Pod
+
+[Pod]
+PodName=beszel
+PublishPort=31827:8090

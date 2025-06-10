@@ -1,0 +1,15 @@
+[Unit]
+Description=IT Tools Container
+
+[Container]
+Pod=it-tools.pod
+ContainerName=it-tools
+Image=docker.io/corentinth/it-tools:latest
+AutoUpdate=registry
+
+[Service]
+Restart=always
+TimeoutStartSec=90
+
+[Install]
+WantedBy=multi-user.target default.target

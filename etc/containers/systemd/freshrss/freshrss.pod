@@ -1,0 +1,6 @@
+[Unit]
+Description=FreshRSS Pod
+
+[Pod]
+PodName=freshrss
+PublishPort=14016:80

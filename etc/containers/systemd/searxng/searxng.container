@@ -1,0 +1,18 @@
+[Unit]
+Description=SearXNG Container
+
+[Container]
+Pod=searxng.pod
+ContainerName=searxng
+Image=docker.io/searxng/searxng:latest
+AutoUpdate=registry
+Volume=searxng.volume:/etc/searxng
+Environment=BASE_URL='https://searxng.example.com/'
+Environment=INSTANCE_NAME='searxng'
+
+[Service]
+Restart=always
+TimeoutStartSec=90
+
+[Install]
+WantedBy=multi-user.target default.target

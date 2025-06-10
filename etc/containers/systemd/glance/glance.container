@@ -1,0 +1,16 @@
+[Unit]
+Description=Glance Container
+
+[Container]
+Pod=glance.pod
+ContainerName=glance
+Image=docker.io/glanceapp/glance:latest
+AutoUpdate=registry
+Volume=${PWD}/config:/app/config:Z
+
+[Service]
+Restart=always
+TimeoutStartSec=90
+
+[Install]
+WantedBy=multi-user.target default.target

@@ -1,0 +1,6 @@
+[Unit]
+Description=Ntfy Pod
+
+[Pod]
+PodName=ntfy
+PublishPort=51718:80

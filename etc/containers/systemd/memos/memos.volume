@@ -1,0 +1,5 @@
+[Unit]
+Description=Memos Volume
+
+[Volume]
+VolumeName=memos

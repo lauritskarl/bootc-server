@@ -1,0 +1,21 @@
+[Unit]
+Description=Vikunja Container
+
+[Container]
+Pod=vikunja.pod
+ContainerName=vikunja
+Image=docker.io/vikunja/vikunja:latest
+AutoUpdate=registry
+Volume=vikunja_files.volume:/app/vikunja/files
+Volume=vikunja_db.volume:/db
+Environment=VIKUNJA_SERVICE_PUBLICURL=https://vikunja.example.com/
+Environment=VIKUNJA_DATABASE_PATH=/db/vikunja.db
+Environment=VIKUNJA_SERVICE_TIMEZONE='Europe/Tallinn'
+Environment=VIKUNJA_SERVICE_JWTSECRET='aa30e7505bfd7859c596a3a0879128c280d83ad26c1fd88c6b2b6f8a7e91c6878bec8e5f7e815edb164e607f40a06de9e26660ef996b3af7550bf25432e5e173d3684b2aca5794c617a7902bafd8ad2892253e895f5b080c453c3d40bb8a554abfddfb1b120e86c88f0a476dda638fb5a14952c17cd2654d9456636f2fb6df484f31afd901f5f47cc63dfeea3dccaf4ba2f9e71c47db0c23997f715d4dbb27a17c4c630a224473e453458154f77cb59ab83b8a67cdcdaafbd6b362f408528bb6af4e472e1751055c51b4bd5249ebb1d7325e4520f89051834be6b2e8466a3a3d6123eae22c16d428c44e0d54f68ce975f59c69f9ad6db560d151ad4b567b177b'
+
+[Service]
+Restart=always
+TimeoutStartSec=90
+
+[Install]
+WantedBy=multi-user.target default.target

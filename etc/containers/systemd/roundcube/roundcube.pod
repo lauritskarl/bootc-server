@@ -1,0 +1,6 @@
+[Unit]
+Description=Roundcube Pod
+
+[Pod]
+PodName=roundcube
+PublishPort=39089:80

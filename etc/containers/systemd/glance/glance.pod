@@ -1,0 +1,6 @@
+[Unit]
+Description=Glance Pod
+
+[Pod]
+PodName=glance
+PublishPort=47149:8080

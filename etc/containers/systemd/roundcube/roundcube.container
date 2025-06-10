@@ -1,0 +1,31 @@
+[Unit]
+Description=Roundcube Container
+
+[Container]
+Pod=roundcube.pod
+ContainerName=roundcube
+Image=docker.io/roundcube/roundcubemail:latest
+AutoUpdate=registry
+Volume=roundcube_install.volume:/var/www/html
+Volume=roundcube_config.volume:/var/roundcube/config
+Volume=roundcube_db.volume:/var/roundcube/db
+Volume=roundcube_temp.volume:/tmp/roundcube-temp
+Environment=ROUNDCUBEMAIL_DB_TYPE=sqlite
+Environment=ROUNDCUBEMAIL_DEFAULT_HOST=ssl://mail.example.com
+Environment=ROUNDCUBEMAIL_DEFAULT_PORT=993
+Environment=ROUNDCUBEMAIL_SMTP_SERVER=ssl://mail.example.com
+Environment=ROUNDCUBEMAIL_SMTP_PORT=465
+#Environment=ROUNDCUBEMAIL_USERNAME_DOMAIN=example.com
+#Environment=ROUNDCUBEMAIL_PLUGINS=archive,zipdownload
+#Environment=ROUNDCUBEMAIL_INSTALL_PLUGINS=1
+#Environment=ROUNDCUBEMAIL_SKIN=elastic
+#Environment=ROUNDCUBEMAIL_UPLOAD_MAX_FILESIZE=5M
+#Environment=ROUNDCUBEMAIL_SPELLCHECK_URI=
+#Environment=ROUNDCUBEMAIL_ASPELL_DICTS=ee
+
+[Service]
+Restart=always
+TimeoutStartSec=90
+
+[Install]
+WantedBy=multi-user.target default.target

@@ -1,0 +1,7 @@
+[Unit]
+Description=Gitea Pod
+
+[Pod]
+PodName=gitea
+PublishPort=15327:3000
+PublishPort=17107:22

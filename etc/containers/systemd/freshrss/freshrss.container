@@ -1,0 +1,19 @@
+[Unit]
+Description=FreshRSS Container
+
+[Container]
+Pod=freshrss.pod
+ContainerName=freshrss
+Image=docker.io/freshrss/freshrss:latest
+AutoUpdate=registry
+Volume=freshrss.volume:/var/www/FreshRSS/data
+Environment=TZ=Europe/Tallinn
+Environment=CRON_MIN='3,33'
+Environment=BASE_URL=https://freshrss.example.com
+
+[Service]
+Restart=always
+TimeoutStartSec=90
+
+[Install]
+WantedBy=multi-user.target default.target

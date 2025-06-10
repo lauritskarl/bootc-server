@@ -1,0 +1,6 @@
+[Unit]
+Description=Wallos Pod
+
+[Pod]
+PodName=wallos
+PublishPort=33252:8282

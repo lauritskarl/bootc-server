@@ -1,0 +1,6 @@
+[Unit]
+Description=Uptime Kuma Pod
+
+[Pod]
+PodName=uptime-kuma
+PublishPort=48877:3001

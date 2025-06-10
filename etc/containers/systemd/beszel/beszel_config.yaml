@@ -1,0 +1,9 @@
+# Values for port and users are optional.
+# Defaults are port 45876 and the first created user.
+
+systems:
+  - name: Homelab
+    host: /beszel_socket/beszel.sock
+    port: 45876
+    users:
+      - karl@example.com

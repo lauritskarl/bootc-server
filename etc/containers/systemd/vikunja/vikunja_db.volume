@@ -1,0 +1,5 @@
+[Unit]
+Description=Vikunja Database Volume
+
+[Volume]
+VolumeName=vikunja_db

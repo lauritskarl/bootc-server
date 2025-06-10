@@ -1,0 +1,17 @@
+[Unit]
+Description=Beszel Hub Container
+
+[Container]
+Pod=beszel.pod
+ContainerName=beszel
+Image=docker.io/henrygd/beszel:latest
+AutoUpdate=registry
+Volume=beszel_data.volume:/beszel_data:Z
+Volume=beszel_socket.volume:/beszel_socket:Z
+
+[Service]
+Restart=always
+TimeoutStartSec=90
+
+[Install]
+WantedBy=multi-user.target default.target

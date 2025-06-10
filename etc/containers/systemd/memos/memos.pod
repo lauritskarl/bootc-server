@@ -1,0 +1,6 @@
+[Unit]
+Description=Memos Pod
+
+[Pod]
+PodName=memos
+PublishPort=38585:5230

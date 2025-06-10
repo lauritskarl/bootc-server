@@ -1,0 +1,5 @@
+[Unit]
+Description=Ntfy Configuration Volume
+
+[Volume]
+VolumeName=ntfy_config

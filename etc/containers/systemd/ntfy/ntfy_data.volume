@@ -1,0 +1,5 @@
+[Unit]
+Description=Ntfy Data Volume
+
+[Volume]
+VolumeName=ntfy_data

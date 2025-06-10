@@ -1,0 +1,78 @@
+{
+	storage file_system { root /etc/caddy }
+	email postmaster@example.com
+}
+
+*.example.com, example.com{
+	tls {
+		dns hetzner {env.HETZNER_API_KEY}
+	}
+
+	@beszel host beszel.example.com
+	handle @beszel {
+		reverse_proxy :31827
+	}
+
+	@cockpit host cockpit.example.com
+	handle @cockpit {
+		reverse_proxy :9090
+	}
+
+	@freshrss host freshrss.example.com
+	handle @freshrss {
+		reverse_proxy :14016
+	}
+
+	@gitea host gitea.example.com
+	handle @gitea {
+		reverse_proxy :15327
+	}
+
+	@glance host glance.example.com
+	handle @glance {
+		reverse_proxy :47149
+	}
+
+	@it-tools host it-tools.example.com
+	handle @it-tools {
+		reverse_proxy :10157
+	}
+
+	@memos host memos.example.com
+	handle @memos {
+		reverse_proxy :38585
+	}
+
+	@ntfy host ntfy.example.com
+	handle @ntfy {
+		reverse_proxy :51718
+	}
+
+	@roundcube host roundcube.example.com
+	handle @roundcube {
+		reverse_proxy :39089
+	}
+
+	@searxng host searxng.example.com
+	handle @searxng {
+		reverse_proxy :37673
+	}
+
+	@uptime-kuma host uptime-kuma.example.com
+	handle @uptime-kuma {
+		reverse_proxy :48877
+	}
+
+	@vikunja host vikunja.example.com
+	handle @vikunja {
+		reverse_proxy :22003
+	}
+
+	@wallos host wallos.example.com
+	handle @wallos {
+		reverse_proxy :33252
+	}
+
+}
+
+import Caddyfile.d/*.caddyfile
