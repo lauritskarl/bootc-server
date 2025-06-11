@@ -1,8 +1,8 @@
 FROM quay.io/fedora/fedora-bootc:latest
 ADD etc etc
-RUN dnf5 install -y 'dnf5-command(config-manager)'
-RUN dnf config-manager addrepo --from-repofile=https://pkgs.tailscale.com/stable/fedora/tailscale.repo
-RUN dnf install -y \
+RUN dnf5 -y install 'dnf5-command(config-manager)'
+RUN dnf -y config-manager addrepo --from-repofile='https://pkgs.tailscale.com/stable/fedora/tailscale.repo'
+RUN dnf -y install \
   @server-product \
   @container-management \
   cockpit-podman \
